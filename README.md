@@ -3,8 +3,7 @@
 
 <div align="center">
 
-  <img src="https://user-images.githubusercontent.com/78832703/203859927-696905b8-edee-4cc6-8642-0759f99b9ffd.png"
-alt="logo" width="140"  height="auto" />
+  
   <br/>
 
   <h3><b>Bookstore</b></h3>
@@ -50,6 +49,7 @@ alt="logo" width="140"  height="auto" />
     <li>CSS 3</li>
     <li>ES6</li>
     <li>React</li>
+    <li>Redux</li>
   </ul>
 </details>
 <details>
@@ -72,6 +72,9 @@ alt="logo" width="140"  height="auto" />
 
 ### Key Features <a name="key-features"></a>
 
+- Add new book
+- Delete book
+- Display book list
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
