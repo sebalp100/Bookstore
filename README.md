@@ -32,7 +32,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math Magicians <a name="about-project"></a>
+# 📖 Bookstore <a name="about-project"></a>
 
 > In this project, we are setting up a test app using basic React commands.
 
