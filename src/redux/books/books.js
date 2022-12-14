@@ -19,12 +19,7 @@ export default function bookReducer(state = innitialState, action) {
   switch (action.type) {
     case ADD:
       return [
-        ...state,
-        {
-          id: action.id,
-          name: action.name,
-          author: action.author,
-        },
+        ...state, action.payload,
       ];
     case DELETE:
       return state.filter((book) => book.id !== action.id);
@@ -35,6 +30,6 @@ export default function bookReducer(state = innitialState, action) {
 export function createBook(book) {
   return {
     type: ADD,
-    book,
+    payload: book,
   };
 }

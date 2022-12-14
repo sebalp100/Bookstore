@@ -5,6 +5,7 @@ import Form from './Form';
 
 const Home = () => {
   const book = useSelector((state) => state.bookReducer);
+  console.log(book);
 
   return (
     <div className="listContainer">
