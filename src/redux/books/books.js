@@ -22,7 +22,7 @@ export default function bookReducer(state = innitialState, action) {
         ...state, action.payload,
       ];
     case DELETE:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.id !== action.payload.id);
     default: return state;
   }
 }
@@ -34,8 +34,9 @@ export function createBook(book) {
   };
 }
 
-export function deleteBook() {
+export function deleteBook(book) {
   return {
     type: DELETE,
+    payload: book,
   };
 }
