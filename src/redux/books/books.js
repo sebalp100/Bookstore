@@ -1,19 +1,28 @@
 const ADD = './redux/ADD';
 const DELETE = './redux/DELETE';
 
-export default function bookReducer(state = [], action) {
+const innitialState = [{
+  id: 1,
+  name: 'Title',
+  author: 'Author',
+}, {
+  id: 2,
+  name: 'Title 2',
+  author: 'Author 2',
+}, {
+  id: 3,
+  name: 'Title 3',
+  author: 'Author 4',
+}];
+
+export default function bookReducer(state = innitialState, action) {
   switch (action.type) {
     case ADD:
       return [
-        ...state,
-        {
-          id: action.id,
-          name: action.name,
-          author: action.author,
-        },
+        ...state, action.payload,
       ];
     case DELETE:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.id !== action.payload.id);
     default: return state;
   }
 }
@@ -21,6 +30,13 @@ export default function bookReducer(state = [], action) {
 export function createBook(book) {
   return {
     type: ADD,
-    book,
+    payload: book,
+  };
+}
+
+export function deleteBook(book) {
+  return {
+    type: DELETE,
+    payload: book,
   };
 }
