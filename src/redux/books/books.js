@@ -1,7 +1,21 @@
 const ADD = './redux/ADD';
 const DELETE = './redux/DELETE';
 
-export default function bookReducer(state = [], action) {
+const innitialState = [{
+  id: 1,
+  name: 'Title',
+  author: 'Author',
+}, {
+  id: 2,
+  name: 'Title 2',
+  author: 'Author 2',
+}, {
+  id: 3,
+  name: 'Title 3',
+  author: 'Author 4',
+}];
+
+export default function bookReducer(state = innitialState, action) {
   switch (action.type) {
     case ADD:
       return [
