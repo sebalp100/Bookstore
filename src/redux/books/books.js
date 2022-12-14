@@ -33,3 +33,9 @@ export function createBook(book) {
     payload: book,
   };
 }
+
+export function deleteBook() {
+  return {
+    type: DELETE,
+  };
+}

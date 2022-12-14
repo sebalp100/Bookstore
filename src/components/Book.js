@@ -1,25 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Book = ({ bo }) => (
-  <div className="bookContainer">
-    <h2>
-      {
+const Book = ({ bo }) => {
+  // const dispatch = useDispatch();
+  const handleDelete = () => {
+    console.log('hi');
+  };
+
+  return (
+    <div className="bookContainer">
+      <h2>
+        {
           bo.name
         }
-      {' '}
+        {' '}
 
-    </h2>
-    <h3>
-      {' '}
-      {
+      </h2>
+      <h3>
+        {' '}
+        {
           bo.author
         }
-      {' '}
-    </h3>
-    <button type="button">Delete</button>
-  </div>
-);
+        {' '}
+      </h3>
+      <button onClick={handleDelete()} type="button">Delete</button>
+    </div>
+  );
+};
 
 Book.propTypes = {
   bo: PropTypes.shape({
