@@ -1,37 +1,42 @@
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { deleteBook } from '../redux/books/books';
+import { useDispatch, useSelector } from 'react-redux';
+// import PropTypes from 'prop-types';
+import { useEffect } from 'react';
+// import books, { deleteBook, fetchUsers } from '../redux/books/books';
+import { fetchBooks } from '../redux/books/newSlice';
 
-const Book = ({ bo }) => {
+const Book = () => {
   const dispatch = useDispatch();
+  const books = useSelector((state) => state.booksReducer);
+  const dd = books.books;
+  useEffect(() => {
+    dispatch(fetchBooks());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="bookContainer">
-      <h2>
-        {
-          bo.name
-        }
-        {' '}
-
-      </h2>
-      <h3>
-        {' '}
-        {
-          bo.author
-        }
-        {' '}
-      </h3>
-      <button onClick={() => { dispatch(deleteBook({ id: bo.id })); }} type="button">Delete</button>
+    <div>
+      <h2>Book List</h2>
+      {books.loading && <div>Loading...</div>}
+      {!books.loading && books.error ? (
+        <div>
+          Error:
+          {books.error}
+        </div>
+      ) : null}
+      {!books.loading && books.books.length ? (
+        <ul>
+          {
+            dd.map((user) => (
+              <div key={user.id}>
+                <li key={user.title}>{user.title}</li>
+                <li key={user.author}>{user.author}</li>
+              </div>
+            ))
+          }
+        </ul>
+      ) : null}
     </div>
   );
-};
-
-Book.propTypes = {
-  bo: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default Book;
