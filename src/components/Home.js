@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
 import Book from './Book';
 import Form from './Form';
 

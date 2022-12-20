@@ -1,17 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
-import { useEffect } from 'react';
-// import books, { deleteBook, fetchUsers } from '../redux/books/books';
-import { fetchBooks } from '../redux/books/newSlice';
+import { nanoid } from '@reduxjs/toolkit';
+import { removeNewBook } from '../redux/books/newSlice';
 
 const Book = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer);
   const dd = books.books;
-  useEffect(() => {
-    dispatch(fetchBooks());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div>
@@ -27,9 +21,10 @@ const Book = () => {
         <ul>
           {
             dd.map((user) => (
-              <div key={user.id}>
+              <div key={nanoid()}>
                 <li key={user.title}>{user.title}</li>
                 <li key={user.author}>{user.author}</li>
+                <button type="button" onClick={() => dispatch(removeNewBook(user.id))}>DELETE</button>
               </div>
             ))
           }
