@@ -23,8 +23,8 @@ const Book = () => {
               <div className="bookContainer" key={nanoid()}>
                 <div className="innerCont">
                   <div className="bookContent">
-                    <li key={user.title}>{user.title}</li>
-                    <li key={user.author}>{user.author}</li>
+                    <li className="title" key={user.title}>{user.title}</li>
+                    <li className="author" key={user.author}>{user.author}</li>
                     <div className="buttons">
                       <button type="button" className="action">Comments</button>
                       <div className="divider" />
