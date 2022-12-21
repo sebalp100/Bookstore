@@ -75,34 +75,4 @@ const booksSlice = createSlice({
   },
 });
 
-/* extraReducers: (builder) => {
-  builder.addCase(fetchBooks.pending, (state) => {
-    state.loading = true;
-  });
-  builder.addCase(fetchBooks.fulfilled, (state, action) => {
-    state.loading = false;
-    state.books = action.payload;
-    state.error = '';
-  });
-  builder.addCase(fetchBooks.rejected, (state, action) => {
-    state.loading = false;
-    state.books = [];
-    state.error = action.error.message;
-  });
-  builder.addCase(saveNewBook.pending, (state) => {
-    state.loading = true;
-  });
-  builder.addCase(saveNewBook.fulfilled, (state, action) => {
-    state.loading = false;
-    state.books.push(action.payload);
-  });
-  builder.addCase(removeNewBook.pending, (state) => {
-    state.loading = true;
-  });
-  builder.addCase(removeNewBook.fulfilled, (state, action) => {
-    state.loading = false;
-    state.books = action.payload;
-  });
-}, */
-
 export default booksSlice.reducer;
