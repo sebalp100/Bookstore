@@ -17,6 +17,16 @@ body {
   background-color: #fafafa;
 }
 
+.active {
+  color: black;
+  text-decoration: none;
+}
+
+.inactive {
+  color: rgb(189, 189, 189);
+  text-decoration: none;
+}
+
 nav {
   padding: 24px 4%;
   background-color: #fff;
@@ -57,6 +67,7 @@ nav h1 {
   list-style-type: none;
   grid-gap: 40px;
   gap: 40px;
+  font-size: 14px;
 }
 
 .categories {
