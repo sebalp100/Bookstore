@@ -9,7 +9,7 @@ const Book = () => {
 
   return (
     <div>
-      <h2>Book List</h2>
+      <h2 className="list">Book List</h2>
       {books.loading && <div>Loading...</div>}
       {!books.loading && books.error ? (
         <div>
@@ -21,7 +21,7 @@ const Book = () => {
         <ul>
           {
             dd.map((user) => (
-              <div key={nanoid()}>
+              <div className="bookContainer" key={nanoid()}>
                 <li key={user.title}>{user.title}</li>
                 <li key={user.author}>{user.author}</li>
                 <button type="button" onClick={() => dispatch(removeNewBook(user.id))}>DELETE</button>
