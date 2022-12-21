@@ -39,7 +39,7 @@ const Form = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button onClick={() => handleBook(name, author)} type="button">ADD</button>
+        <button onClick={() => handleBook(name, author)} type="button" className="addButton">ADD BOOK</button>
       </form>
     </div>
   );

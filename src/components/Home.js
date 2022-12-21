@@ -7,7 +7,8 @@ const Home = () => (
     <div className="bookDiv">
       <Book />
     </div>
-    <h2 className="newBook">Add new book</h2>
+    <div className="bar" />
+    <h2 className="newBook">ADD NEW BOOK</h2>
     <Form />
   </div>
 );
