@@ -61,3 +61,7 @@ form {
   color: black;
   cursor: pointer;
 }
+
+.list {
+  text-align: center;
+}

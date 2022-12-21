@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createBook } from '../redux/books/books';
+import { saveNewBook } from '../redux/books/newSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -10,12 +10,16 @@ const Form = () => {
   const handleBook = (name, author) => {
     const id = Math.floor(Math.random() * 1000);
     const newBook = {
-      id,
-      name,
+      item_id: id,
+      title: name,
       author,
+      category: 'Fiction',
     };
-    dispatch(createBook(newBook));
+    dispatch(saveNewBook(newBook));
+    setName('');
+    setAuthor('');
   };
+
   return (
     <div className="formContainer">
       <form>
