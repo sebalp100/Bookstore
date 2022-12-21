@@ -9,7 +9,6 @@ const Book = () => {
 
   return (
     <div>
-      <h2 className="list">Book List</h2>
       {books.loading && <div>Loading...</div>}
       {!books.loading && books.error ? (
         <div>
@@ -22,9 +21,38 @@ const Book = () => {
           {
             dd.map((user) => (
               <div className="bookContainer" key={nanoid()}>
-                <li key={user.title}>{user.title}</li>
-                <li key={user.author}>{user.author}</li>
-                <button type="button" onClick={() => dispatch(removeNewBook(user.id))}>DELETE</button>
+                <div className="innerCont">
+                  <div className="bookContent">
+                    <li className="title" key={user.title}>{user.title}</li>
+                    <li className="author" key={user.author}>{user.author}</li>
+                    <div className="buttons">
+                      <button type="button" className="action">Comments</button>
+                      <div className="divider" />
+                      <button type="button" onClick={() => dispatch(removeNewBook(user.id))} className="action">Remove</button>
+                      <div className="divider" />
+                      <button type="button" className="action">Edit</button>
+                    </div>
+                  </div>
+                  <div className="progress">
+                    <div className="progressCont">
+                      <div className="progressItem" />
+                    </div>
+                    <div className="progress-stat">
+                      <p className="progressAmount">64%</p>
+                      <p className="completed">Completed</p>
+                    </div>
+                    <div className="progDiv" />
+                    <div className="chapterContainer">
+                      <div>
+                        <p className="current">CURRENT CHAPTER</p>
+                        <p className="chapter">Chapter 5</p>
+                      </div>
+                      <div>
+                        <button type="button" className="update">UPDATE PROGRESS</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))
           }
